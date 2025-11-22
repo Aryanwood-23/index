@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Queen Shruti 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #ffd6ff, #e6c2ff, #c8a2ff, #b388ff);
+      position: relative;
+      overflow: hidden;
+      padding: 16px;
+    }
+
+    .heart {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      transform: rotate(45deg);
+      background: #ff85c0;
+      opacity: 0.5;
+      animation: floatUp 10s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #ff85c0;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -9px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -9px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .card {
+      position: relative;
+      max-width: 480px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 24px;
+      padding: 24px 20px 18px;
+      box-shadow: 0 18px 45px rgba(80, 0, 120, 0.35);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #7b1fa2;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: #8b5fbf;
+      margin-bottom: 16px;
+    }
+
+    .message-box {
+      background: #fff7ff;
+      border-radius: 18px;
+      padding: 16px 14px;
+      min-height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #4a1166;
+      border: 1px solid #f8c1ff;
+    }
+
+    .counter {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #9b5fc0;
+    }
+
+    .buttons {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      border: none;
+      outline: none;
+      padding: 10px 26px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff79c9, #ff4fa3);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(255, 64, 129, 0.5);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+    }
+
+    button:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: 0 6px 16px rgba(255, 64, 129, 0.4);
+      opacity: 0.9;
+    }
+
+    .small-note {
+      margin-top: 8px;
+      font-size: 0.75rem;
+      color: #b07ad3;
+    }
+  </style>
+</head>
+<body>
+  <!-- floating hearts -->
+  <div class="heart" style="left: 8%; bottom: -10%; animation-duration: 12s;"></div>
+  <div class="heart" style="left: 22%; bottom: -14%; animation-duration: 9s;"></div>
+  <div class="heart" style="left: 40%; bottom: -12%; animation-duration: 11s;"></div>
+  <div class="heart" style="left: 60%; bottom: -16%; animation-duration: 10s;"></div>
+  <div class="heart" style="left: 78%; bottom: -18%; animation-duration: 13s;"></div>
+
+  <div class="card">
+    <div class="title">For My Queen Shruti 💖</div>
+    <div class="subtitle">
+      “Next Message” pe tap karte jao, 100 special birthday messages sirf tumhaare liye 💕
+    </div>
+
+    <div class="message-box" id="messageBox">
+      Loading love...
+    </div>
+
+    <div class="counter" id="counter"></div>
+
+    <div class="buttons">
+      <button id="nextBtn">Next Message 💕</button>
+    </div>
+
+    <div class="small-note">
+      Made with so much love by Aryan 🫶
+    </div>
+  </div>
+
+  <script>
+    const messages = [
+      `Happy Birthday, Shruti 🩷 tum ho is duniya ki sabse pyaari feeling ✨`,
+      `Aaj ka din special hai kyunki aaj tum paida hui thi 💗`,
+      `Happy Birthday love! Agar duniya mein cutest ka award hota, tum hi jeetti 🏆💞`,
+      `Shruti, tumhari smile mera favourite ghar hai 🥺`,
+      `Tumhaare bina life adhoori hai, tumhaare birthday bina celebration adhoora 🎉💕`,
+      `Happy Birthday baby, tumhaare saare sapne poore ho – khaas kar jo mujhse jude ho 😉`,
+      `Shruti, tumne pyaar ko bahut simple aur sundar bana diya hai 💖`,
+      `Aaj tumhaara ek hi right hai – sirf khush rehna, baaki sab main sambhal lunga 🤭`,
+      `Jo ladki mere dil ko chura ke bhaag gayi usse Happy Birthday 💓`,
+      `Tum meri life ki sabse sweet problem ho – jise solve karne ka bilkul mann nahi karta 😚`,
+      `Happy Birthday meri jaan, meri peace, meri happiness 💗`,
+      `Aaj ka poora din sirf tumhaare naam, aur main hamesha tumhaare naam 🫶`,
+      `Shruti, tum chapter nahi ho, tum meri poori love story ho 📖✨`,
+      `Tumhaara message mera favourite notification hai 😍`,
+      `Happy Birthday princess 👑 tumhe duniya ki saari khushiya mile 💕`,
+      `Har birthday pe main tumse thoda aur zyaada pyaar karne lagta hoon ❤️`,
+      `Tumhari hansi meri weakness bhi hai aur strength bhi 💗`,
+      `Happy Birthday meri chhoti si butterfly 🦋`,
+      `Main roz tumse pyaar karta hoon, par aaj extra wala dose hai 😘`,
+      `Tumhe agar poora universe chahiye, main koshish karunga tum tak le aane ki 💫`,
+      `Happy Birthday uss ladki ko jisne meri “life” ko “love” bana diya 💖`,
+      `Tum meri life ka sabse cute accident ho 💝`,
+      `Happy Birthday meri heartbeat 💓`,
+      `Tumhaari wajah se romantic gaane ab samajh aane lage hain ❤️`,
+      `Tum meri tough life ka sabse soft part ho 💗`,
+      `Tumhari growth dekh ke proud feel hota hai – Happy Birthday 🌸`,
+      `Aaj tum khush ho na? Tumhari khushi hi meri duniya hai 💞`,
+      `Bhagwan ki sabse badi gift mujhe tumhaari form mein milee hai 🥺`,
+      `Happy Birthday meri chocolate 🍫 tum sweet bhi ho aur addictive bhi`,
+      `Tum habit nahi ho – tum mera addiction ho, jise main kabhi chhodna nahi chahta 💕`,
+      `Shruti, thank you for simply existing 🌎💗`,
+      `Tum meri good morning, good night aur beech ke saare pal ho ☀️🌙`,
+      `Kal tak tum sapna thi, aaj tum meri reality ho 💖`,
+      `Aaj ka din tumhaare jitna beautiful aur mashallah ho 🌸❤️`,
+      `Happy Birthday meri cute si overthinking queen 😘`,
+      `Umar chahe badh jaaye, tumhara cuteness level up hota rahega 💗`,
+      `Cake sweet hai, lekin aaj tum usse bhi zyaada sweet lag rahi ho 🎂🍬`,
+      `Happy Birthday cutie pie, tum mera dil hasa deti ho 😁💗`,
+      `Tum jaise ho, waise hi perfect ho – change ki bilkul zarurat nahi 💕`,
+      `Aaj full pampering mode sirf tumhaare liye on hai 😚💞`,
+      `Tumhaare bina duniya black & white ho jaati, colours tum lekar aayi ho 🌈`,
+      `Happy Birthday to my lucky charm 🍀`,
+      `Tum habit nahi, pyaar ka overdose ho 💘`,
+      `Aaj shabdon se zyaada dil se bol raha hoon – I truly love you 💗`,
+      `Aaj pyaar ka overdose hai, kal se phir normal dose pe aa jaayenge 🤭`,
+      `Tumse milne se pehle sab kuchh adhoora tha 💕`,
+      `Main blessed hoon ki main tumse pyaar kar sakta hoon, aur tum mujhse 💖`,
+      `Happy Birthday mera sunshine ☀️ tum meri life ko roshan kar deti ho`,
+      `Aaj tum itni pretty lag rahi ho ki nazar utaarne ka mann kar raha hai 🧿😍`,
+      `Kabhi mat badalna, tum aise hi bohot acchi ho 💗`,
+      `Tum meri safest jagah ho, jahan main asli wala main ban sakta hoon 🫂`,
+      `Aaj tum koi wish mat maangna… main hi tumhaari wish ban ke khada hoon 😌`,
+      `Happy Birthday meri future 🥹💞`,
+      `Tumhaara chehra dekh kar aaj ka din already perfect ho gaya 💕`,
+      `Tumhari hansi se duniya thodi sahi si lagne lagti hai 😘`,
+      `Happy Birthday meri angel 👼 tum upar se special order pe aayi ho`,
+      `Tumhaare bina main incomplete hoon 💗`,
+      `80 saal ki umar mein bhi tumhaare saath hi remote pe jhagda karna hai ❤️`,
+      `Aaj tum queen ho, aur main tumhaara personal servant 😌👑`,
+      `Tumse haarke bhi jeet jaisa feel aata hai 💕`,
+      `Tumse pyaar karna meri zindagi ka sabse accha decision hai ❤️`,
+      `Sab tumhe wish karenge, par tumse aise pyaar koi nahi karega jaise main karta hoon 💞`,
+      `Ek din crown, ek din ring – dono tumhaare liye hi honge 💍😉`,
+      `Tumhari khushi hi mera sabse bada goal hai 💗`,
+      `Aaj tumhe hugs compound interest ke saath milenge 🤭`,
+      `Aaj sirf love, zero stress – sirf tum aur main 💕`,
+      `Jahan tum hoti ho, wahan duniya gentle feel hoti hai 💙`,
+      `Tumhaara photo + mera wallpaper = perfect combo 😘`,
+      `Happy Birthday meri forever person 💗`,
+      `Tumhe miss karna mera life ka sabse tough level hai 😔❤️`,
+      `Tum meri zindagi ka sabse pretty chapter ho 🌸`,
+      `Aaj ka din ek warm hug jaisa soft aur cozy ho tumhaare liye 🤗`,
+      `Tumne mere andar ka sweetest version on kar diya hai 😚`,
+      `Aaj tumhaare upar full on pyaar ki baarish hone waali hai 😘`,
+      `Tum saans jaisi zaruri ho 💗`,
+      `Tum chalti phirti wish-fulfilment machine ho 💕`,
+      `Har janam mein tumhe paana hai ❤️`,
+      `Aaj tumhaara birthday hai, kal meri kismat, kyunki tum meri ho 💞`,
+      `Tum pyaar se bhi zyaada mere liye peace ho 🕊️`,
+      `Happy Birthday meri favourite insaan in the whole universe 🌍💗`,
+      `Tumhaari awaaz bilkul therapy jaisi lagti hai 💕`,
+      `Aaj phone neeche mat rakhna, full pampering mode on hai 😘`,
+      `Aaj tumhaari smile extra cute honi chahiye 😍`,
+      `Dil pe tumhaara naam permanent likh gaya hai 💝`,
+      `Tumhaare saath har cheez special lagne lagti hai 💗`,
+      `Aaj tumhe ek baar nahi, bohot baar tight hug chahiye 🤗`,
+      `Happy Birthday meri life upgrade 💞`,
+      `Tumse pyaar karna meri favourite feeling hai ❤️`,
+      `Aaj tum confident, pretty aur unstoppable lag rahi ho ✨`,
+      `Proud hoon ki tum meri ho aur main tumhaara hoon 💓`,
+      `Tumhaara naam sunte hi automatic smile aa jaati hai 😚`,
+      `Tum mere liye God ka cutest plot twist ho 💕`,
+      `Tumhaare saath future bohot beautiful lagta hai ❤️`,
+      `Happy Birthday meri personal happiness generator 😁`,
+      `Tum priceless ho, aur main bohot lucky hoon ki tum mil gayi 💗`,
+      `Aaj celebration tumhaare liye hai, lekin thankful main hoon 🥺`,
+      `Tum sirf mera pyaar nahi, tum mera ghar ho, meri safe jagah ho 🫶`,
+      `Happy Birthday meri dream girl 💘`,
+      `Tumhe paa kar lagta hai life ne finally “correct answer” de diya ❤️`,
+      `Last mein bas itna hi – I love you Shruti, aaj bhi, kal bhi, aur hamesha 💞`
+    ];
+
+    let index = 0;
+    const box = document.getElementById("messageBox");
+    const counter = document.getElementById("counter");
+    const btn = document.getElementById("nextBtn");
+
+    function showMessage() {
+      box.textContent = messages[index];
+      counter.textContent = `Message ${index + 1} of ${messages.length}`;
+    }
+
+    btn.addEventListener("click", () => {
+      index++;
+      if (index >= messages.length) {
+        index = 0; // phir se first message
+      }
+      showMessage();
+    });
+
+    // first message on load
+    showMessage();
+  </script>
+</body>
+</html>
